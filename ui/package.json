@@ -1,0 +1,25 @@
+{
+  "name": "moon-ui",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --open dev/index.html",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@web/dev-server": "^0.4.6",
+    "eslint": "9.x",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  }
+}
