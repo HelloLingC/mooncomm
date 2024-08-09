@@ -24,8 +24,12 @@ router.get('/', (req, env) => {
 })
 
 router.get('/genavatar', (req, env) => {
+  let seed = req.query.seed;
+  if (!seed) {
+    seed = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+  }
   const avatar = createAvatar(thumbs, {
-    seed: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+    seed: seed
   });
   const svg = avatar.toString();
 
@@ -43,20 +47,22 @@ router.get('/api/get', async (req, env) => {
     return new Response('Invalid Request', { status: 400 })
   }
   const comments = await db.getComments(env.DATABASE, id)
-  console.log(comments.results)
-  return new Response(comments.results, {
+  return new Response(JSON.stringify(comments.results), {
     headers: {
       'content-type': 'text/json;charset=UTF-8'
     }
   })
 })
 
+router.get('/api/vote', async (req, env) => {
+  
+})
+
 router.post('/api/submit', async (request, env) => {
   try {
     var comment = await request.json()
   } catch (error) {
-    console.log(error)
-    return new Response('Invalid Request', { status: 400 })
+    return new Response(JSON.stringify({status: 'error', msg: 'Invalid Request'}), { status: 400 })
   }
   const ip = request.headers.get('CF-Connecting-IP') || request.headers.get('x-forwarded-for')
   const ua = request.headers.get('user-agent')
@@ -66,9 +72,9 @@ router.post('/api/submit', async (request, env) => {
   // console.log(`[${new Date().toISOString()}] ${ip} - ${ua} - ${JSON.stringify(comment)}`)
   let err = db.createComment(env.DATABASE, comment)
   if(err) {
-    return new Response('Error: ' + err, { status: 503 })
+    return new Response(JSON.stringify({status: 'error', msg: err.message}), { status: 503 })
   }
-  return new Response('OK', {
+  return new Response(JSON.stringify({status: 'ok'}), {
     headers: {
       'content-type': 'text/plain;charset=UTF-8'
     }
