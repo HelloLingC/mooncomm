@@ -2,9 +2,19 @@
 
 A comment system designed for Cloudflare Workers.
 
-Built with  <a href="https://itty.dev/itty-router">
-     <img src="https://github.com/kwhitley/itty-router/assets/865416/ed7de66a-b876-46a8-a65f-429dc6d3da20" alt="Itty Router" height="18" />
-  </a> and <a href="https://lit.dev/"><img height="18" src="https://github.com/lit/lit/raw/main/packages/lit/logo.svg"> </a>
+Build with  <a href="https://github.com/kwhitley/itty-router">
+     <img src="https://github.com/kwhitley/itty-router/assets/865416/ed7de66a-b876-46a8-a65f-429dc6d3da20" alt="Itty Router" height="25" />
+  </a> and <a href="https://github.com/lit/lit">
+    <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/lit/lit/raw/main/packages/lit/logo-dark.svg" alt="Lit" height="25">
+  </source>
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/lit/lit/raw/main/packages/lit/logo.svg" alt="Lit" height="25">
+  </source>
+  <img src="https://github.com/lit/lit/raw/main/packages/lit/logo.svg" alt="Lit" height="25">
+</picture>
+  </a>
+
+
 
 
 # Backend - CF
