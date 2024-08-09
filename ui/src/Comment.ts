@@ -107,5 +107,9 @@ transition: color 0.3s;
 color: #0056b3;
 }
 
+  .mooncomm-comment-vote {
+    margin-left: 8px;
+  }
+
     `
 }
