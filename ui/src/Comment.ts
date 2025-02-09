@@ -1,5 +1,5 @@
 import { html, css, LitElement, PropertyValues } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 import { getGravatar, getGuestAvatar } from './utils/avatar';
 import { Comment } from './types/CommentIntl';
 

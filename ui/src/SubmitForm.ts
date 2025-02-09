@@ -16,24 +16,44 @@ export class CommentForm extends LitElement {
   }
   
   .mooncomm-input-top input {
+    padding: 3px;
     flex: 1;
   }
 
-  button {
-    background-color: rgb(245, 245, 245);;
-    border: 3px solid #ccc; /* Border */
-    color: black;
-            margin: 5px;
-            padding: 10px 20px; /* Padding */
-            font-size: 16px; /* Font size */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: border-color 0.3s ease; /* Smooth transition for border color */
+  textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 16px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
     }
 
-    button:hover {
-        border-color: #00BFFF; /* Brightened border color on hover */
-    }
+  button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #333;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+  .mooncomm-footer {
+    margin-top: 3px;
+    font-size: 13px;
+    text-align: right;
+  }
+  a {
+    color: #0051c3;
+  }
   `;
 
 @property() accessor isRequired = true;
@@ -60,7 +80,7 @@ export class CommentForm extends LitElement {
         </div>
         <textarea name="comment" class="mooncomm-input-comment" rows="3" ?required="${this.isRequired}" placeholder="Comment"></textarea>
         <button type="submit" class="mooncomm-submit">Post</button>
-        <span>Powered by <a href="https://comment.moonlab.top">MoonComm</a></span>
+        <span class="mooncomm-footer">Powered by <a href="https://comment.moonlab.top">MoonComm</a></span>
         </form>
     `;
   }

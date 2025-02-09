@@ -10,6 +10,7 @@ export class MoonComm extends LitElement {
       display: block;
       padding: 16px;
       max-width: 600px;
+      margin: 0 auto;
     }
   `;
 
